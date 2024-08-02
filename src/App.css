@@ -1,10 +1,26 @@
-h1,p {
+header, footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
   text-align: center;
-  color: brown;
 }
-p:hover{
-  color: red;
-  font-size: xx-large;
+
+.card {
+  border: 1px solid orange;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 4px;
   background-color: aqua;
+  border-radius: 10px;
 }
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+h2{
+  color: darkmagenta;
+}
+
 

@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+ Difference Between .js, .jsx, and .tsx
+1.=>.js:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Standard JavaScript file.
+Can contain regular JavaScript code and JSX if supported by build tools.
+// src/utils/helper.js
+export const formatCurrency = (number) => `$${number.toFixed(2)}`;
 
-## Available Scripts
+2.=>.jsx:
 
-In the project directory, you can run:
+JavaScript file with JSX syntax.
+Used for React components to make it clear that the file contains JSX.
+// src/components/App.jsx
+import React from 'react';
 
-### `npm start`
+const App = () => {
+  return <h1>Hello, World!</h1>;
+};
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+export default App;
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3.=>.tsx:
 
-### `npm test`
+TypeScript file with JSX syntax.
+Used in React projects with TypeScript.
+Provides type checking and additional TypeScript features.
+// src/components/App.tsx
+import React from 'react';
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+interface Props {
+  title: string;
+}
 
-### `npm run build`
+const App: React.FC<Props> = ({ title }) => {
+  return <h1>{title}</h1>;
+};
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+export default App;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Children Prop :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Children is also way to communicate from parent component to the children component, but here we will encapsulate jsx or text content or component as a content for the child component
 
-### `npm run eject`
+ex: <Greeting name="ravi >
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h4>Good morning ravi</h4>
+<h4>How are you feeling today ?</h4>
+</Greeting>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<Greeting>
+How are you ?
+</Greeting>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<Greeting>
+<Card>
+ravi
+</Card>
+</Greeting>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+note : By using the children we can nest the components (Reusability of jsx or content or component)
 
-## Learn More
+To receive the children content we need use prop.children in the child component
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ways to style the React App
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Inline styling or Object styling <h1 style="color:red" > </h1> <h1 style={{color:"red"}} > </h1>
+2. External Css Styling : create a external css file (overall app or individual components or set of components), import and use in the targetted component
+3. External module Styling : create a external .module.css file (we use in individual component by importing via variable)
 
-### Code Splitting
+External Css frameworks styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Bootstrap and React Bootstrap
+2. Tailwind css
+3. Chakra UI
+4. Ant design
+5. Material UI ....
 
-### Analyzing the Bundle Size
+3 Goats 3 Lions are there River Point 1 --> River Point 2
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+one boat
+boat can carry upto 2
+if lion count is greater than goat count , lion will eat goat
 
-### Making a Progressive Web App
+Topics :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Children prop in react
+2. Children prop different ways to access
+3. How to apply styles to react application
 
-### Advanced Configuration
+Tasks:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Repeat the Class
+2. Design the layout which contains Header , Cards . Footer
+3. Ipl teams in the card
+4. Children prop usage in react
+5. Difference between .js .jsx and .tsx
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
